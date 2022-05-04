@@ -1,0 +1,3 @@
+[submodule "RTOS/cpp-httplib"]
+	path = RTOS/cpp-httplib
+	url = https://github.com/yhirose/cpp-httplib
