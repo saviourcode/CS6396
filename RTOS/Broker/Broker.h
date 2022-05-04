@@ -1,5 +1,6 @@
 #include "../interface.h"
-#include <vector>
+#include "./HTTPServer.h"
+#include "./WebSocketServer.h"
 
 class Broker : public IBroker
 {
@@ -8,7 +9,13 @@ public:
         
     }
     ~Broker() {
-    
+        
+    }
+    void run() {
+        std::thread t1(http_server, std::ref(topics));
+        std::thread t2(print_map, std::ref(topics));
+        t1.join();
+        t2.join();
     }
     virtual void addSubscriber(ISubscriber * ptr, std::string topic)
     {
@@ -61,4 +68,6 @@ private:
     IPublisher * m_pPublisher;
     std::vector<ISubscriber *> m_subscriberForAA;
     std::vector<ISubscriber *> m_subscriberForBB;
+    ThreadSafeMap<std::string, std::string> topics;
+    ThreadSafeMap<std::string, std::string> subscribers;
 };

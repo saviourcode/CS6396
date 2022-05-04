@@ -1,6 +1,9 @@
-[submodule "RTOS/cpp-httplib"]
-	path = RTOS/cpp-httplib
+[submodule "RTOS/Dependencies/cpp-httplib"]
+	path = RTOS/Dependencies/cpp-httplib
 	url = https://github.com/yhirose/cpp-httplib
-[submodule "RTOS/websocketpp"]
-	path = RTOS/websocketpp
+[submodule "RTOS/Dependencies/websocketpp"]
+	path = RTOS/Dependencies/websocketpp
 	url = https://github.com/zaphoyd/websocketpp
+[submodule "RTOS/Dependencies/json"]
+	path = RTOS/Dependencies/json
+	url = https://github.com/nlohmann/json
